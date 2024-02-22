@@ -1,0 +1,215 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFBB33;
+    display: flex;
+    flex-direction: column;
+    min-height: 180vh;
+    
+}
+
+
+
+header {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: -110px;
+   
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.3);
+    transition: top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header:hover {
+  
+    top: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}   
+@keyframes static {
+    0% { 
+        opacity: 100%;
+    }
+    
+    50% { 
+        opacity: 50%;
+    }
+    
+    100% { 
+        opacity: 100%;
+    }
+}
+
+header:not(:hover){
+    opacity: 50%;
+    animation: static 2s infinite;
+}
+ 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+  
+
+
+#logo {
+    width: 80px;
+    height: auto;
+    filter: invert(1);
+    transform: rotate(-20deg);
+}
+
+#banner {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+#login-btn {
+    padding: 10px 16px;
+    margin-right: 100px;
+    background-color: #FFBB33;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#login-btn img {
+    max-width: 50px; /* Ajusta el ancho máximo de la imagen a 50px */
+    max-height: 50px; /* Ajusta la altura máxima de la imagen a 50px */
+    vertical-align: middle;
+}
+
+#about {
+    background-color: #000;
+    padding: 20px;
+    margin: 200px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    color: #FFf;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#about p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 30em) {
+    body {
+        min-height: auto;
+    }
+    header {
+        background-color: black;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    header:not(:hover){
+        opacity: 100%;
+        animation: static 0;
+    }
+    #logo {
+        width: 40px;
+        transform: rotate(0deg);
+    }
+    #banner {
+        max-width: 30%;
+        margin: 10px auto;
+        padding-bottom: 0px;
+    }
+    .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #fff;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+    
+    #login-btn {
+        padding: 6px 10px;
+        margin: 5% 10px;
+        font-size: 10px;
+        display: block;
+        align-self: flex-end;
+        margin-right: 100px;
+    }
+    
+    
+    #login-btn img {
+        max-width: 25px; /* Ajusta el ancho máximo de la imagen a 50px */
+        max-height: 25px; /* Ajusta la altura máxima de la imagen a 50px */
+        vertical-align: middle;
+    }
+
+    .footer {
+        margin-top: 20px;
+        width: 100%;
+    }
+    
+}

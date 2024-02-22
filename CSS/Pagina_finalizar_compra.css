@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FFBB33;
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+}
+header {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: -110px;
+    z-index: 1000;
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.3);
+    transition: top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+header:hover {
+    top: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}   
+@keyframes static {
+    0% { 
+        opacity: 100%;
+    }
+    
+    50% { 
+        opacity: 50%;
+    }
+    
+    100% { 
+        opacity: 100%;
+    }
+}
+
+header:not(:hover){
+    opacity: 50%;
+    animation: static 2s infinite;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+  
+
+
+#logo {
+    width: 80px;
+    height: auto;
+    filter: invert(1);
+    transform: rotate(-20deg);
+}
+
+#banner {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+#login-btn {
+    padding: 10px 16px;
+    margin-right: 100px;
+    background-color: #FFBB33;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#login-btn img {
+    max-width: 50px; /* Ajusta el ancho máximo de la imagen a 50px */
+    max-height: 50px; /* Ajusta la altura máxima de la imagen a 50px */
+    vertical-align: middle;
+}
+.content {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 0px;
+}
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+#button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 45px; /* Ajusta el valor según sea necesario para agregar más espacio hacia abajo */
+    margin-bottom: 5%;
+}
+#logomenu{
+    margin-left: 25%;
+    margin-top: 15%;
+    width: 50%;
+}
+.custom-button1 {
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    font-size: 30px;
+}
+#menu{
+    width: 250px;
+    margin-right: 30px;
+}
+.custom-button2 {
+    font-size: 30px;
+    background-color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+}
+#hamburger{
+    margin-bottom: 10px;
+    width: 250px;
+    margin-right: 30px;
+}
+.custom-button1:hover,
+.custom-button2:hover{
+    background-color: #FFBB33;
+    transform: scale(1.1); /* Hace que el botón sea un 10% más grande en el estado de :hover */
+}
+.custom-button1,
+.custom-button2{
+    background-color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    transition: box-shadow 0.3s ease-in-out; /* Agrega una transición suave de 0.3 segundos */
+    margin-left: 30px;
+    margin-right: 30px;
+    border: 3px solid black;
+}
+@keyframes pulsarBoton {
+    0% { 
+        transform: scale(1);
+        background-color: #FFBB33;
+    }
+    50% { 
+        transform: scale(1.2);
+        background-color: white; /* Cambiar a otro color en el 50% */
+    }
+    100% { 
+        transform: scale(1.1);
+        background-color: #FFBB33; /* Volver al color original en el 100% */
+    }
+}
+.custom-button1:active,
+.custom-button2:active{
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 1); /* Aumenta el brillo solo durante el clic */
+    transition: box-shadow 0.1s ease-in-out; /* Ajusta la duración de la transición para un efecto más rápido durante el clic */
+    animation: pulsarBoton 0.2s;
+}
+#fake-ticket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto; /* Esto centrará horizontalmente */
+    margin-top: 150px;
+
+    max-width: 300px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+#fake-ticket h2 {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+#fake-ticket p {
+    margin: 5px 0;
+    color: #333;
+}
+
+#fake-ticket hr {
+    border: 1px solid #000;
+    width: 100%;
+    margin: 10px 0;
+}
+
+#fake-ticket::before {
+    content: '\1F4B0'; /* Unicode character for a receipt emoji, you can change it */
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 30em) {
+    body {
+        min-height: auto; /* Evita la altura mínima para permitir un desplazamiento vertical en dispositivos móviles */
+    }
+    header {
+        background-color: black;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    header:not(:hover){
+        opacity: 1;
+        animation: static 0s infinite;
+    }
+    #logomenu{
+        margin-left: 10%;
+        margin-top: 20%;
+        width: 80%;
+    }
+    #logo {
+        width: 40px; /* Ajusta el tamaño del logo en dispositivos móviles */
+        transform: rotate(0deg);
+    }
+    #banner {
+        max-width: 30%;
+        margin: 10px auto; /* Centra la imagen del banner y aplica margen en la parte superior e inferior */
+        padding-bottom: 0px; /* Ajusta el relleno inferior del banner */
+    }
+    #login-btn {
+        padding: 6px 10px; /* Ajusta el tamaño del padding del botón de inicio de sesión en dispositivos móviles */
+        margin: 5% 10px; /* Aplica margen en la parte superior e inferior y en los lados derechos del botón */
+        font-size: 10px; /* Ajusta el tamaño del texto del botón de inicio de sesión en dispositivos móviles */
+        display: block; /* Asegura que el botón se comporte como un bloque */
+        align-self: flex-end; /* Coloca el botón al final de su contenedor (a la derecha en este caso) */
+        margin-right: 10%;
+    }
+    .content {
+        margin-top: 20px; /* Ajusta el margen superior del contenido */
+    }
+    .footer {
+        margin-top: 20px;
+        width: 100%; /* Ajusta el margen superior del pie de página */
+    }
+    #button-container {
+        flex-direction: column; /* Cambia la dirección de los botones a columnas en dispositivos móviles */
+    }
+    .custom-button1,
+    .custom-button2,
+    .custom-button3,
+    .custom-button4 {
+        margin: 10px 0; /* Ajusta el margen de los botones en dispositivos móviles */
+        font-size: 25px;
+    }
+    .custom-button1 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .custom-button4 {
+        margin-top: 20px; /* Ajusta el margen superior del botón FINALIZAR COMPRA en dispositivos móviles */
+        padding: 12px 20px; /* Ajusta el padding para hacer el botón más grande */
+        font-size: 14px; /* Ajusta el tamaño del texto para hacer el botón más grande */
+    }
+}
